@@ -6,12 +6,12 @@ import org.junit.Test
 class RegistrationUtilTest{
     @Test
     fun `empty username returns false`(){
-        val result_ = RegistrationUtil.validateRegistrationInput(
+        val result = RegistrationUtil.validateRegistrationInput(
             "",
             "123",
             "123"
         )
-        assertThat(result_).isFalse()
+        assertThat(result).isFalse()
     }
 
     @Test

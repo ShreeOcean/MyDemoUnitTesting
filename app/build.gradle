@@ -47,3 +47,4 @@ dependencies {
     testImplementation libs.truth
     androidTestImplementation libs.truth
 }
+
