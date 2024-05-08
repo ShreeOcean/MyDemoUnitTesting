@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -46,5 +50,74 @@ dependencies {
     testImplementation project(':app')
     testImplementation libs.truth
     androidTestImplementation libs.truth
+
+    // Architectural Components
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+
+    // Lifecycle
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.lifecycle.runtime.ktx
+
+    // Room
+    implementation libs.androidx.room.runtime
+    kapt libs.androidx.room.compiler
+    // Kotlin Extensions and Coroutines support for Room
+    implementation libs.androidx.room.ktx
+
+    // Retrofit
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    // Coroutines
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
+
+    // Coroutine Lifecycle Scopes
+    implementation libs.androidx.lifecycle.viewmodel.ktx.v220
+    implementation libs.androidx.lifecycle.runtime.ktx.v270
+
+    // Navigation Components
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+    // Glide
+    implementation libs.glide
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // Activity KTX for viewModels()
+    implementation libs.androidx.activity.ktx
+
+    //Dagger - Hilt
+    implementation libs.hilt.android
+    kapt libs.hilt.android.compiler
+
+    implementation libs.androidx.hilt.lifecycle.viewmodel
+    kapt libs.androidx.hilt.compiler
+
+    // Timber
+    implementation libs.timber
+
+    // Local Unit Tests
+    implementation libs.androidx.core
+    testImplementation libs.junit.v413
+    testImplementation libs.hamcrest.all
+    testImplementation libs.androidx.core.testing
+    testImplementation libs.robolectric
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.truth
+    testImplementation libs.mockito.core
+
+    // Instrumented Unit Tests
+    androidTestImplementation libs.junit
+    androidTestImplementation libs.dexmaker.mockito
+    androidTestImplementation libs.kotlinx.coroutines.test.v121
+    androidTestImplementation libs.androidx.core.testing.v210
+    androidTestImplementation libs.truth
+    androidTestImplementation libs.androidx.junit.v111
+    androidTestImplementation libs.androidx.espresso.core.v320
+    androidTestImplementation libs.mockito.core.v2210
+
 }
 
