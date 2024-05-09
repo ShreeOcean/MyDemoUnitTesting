@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
@@ -19,6 +18,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -107,17 +107,18 @@ dependencies {
     testImplementation libs.robolectric
     testImplementation libs.kotlinx.coroutines.test
     testImplementation libs.truth
-    testImplementation libs.mockito.core
+//    testImplementation libs.mockito.core
 
     // Instrumented Unit Tests
     androidTestImplementation libs.junit
-    androidTestImplementation libs.dexmaker.mockito
+//    androidTestImplementation libs.dexmaker.mockito
     androidTestImplementation libs.kotlinx.coroutines.test.v121
     androidTestImplementation libs.androidx.core.testing.v210
     androidTestImplementation libs.truth
     androidTestImplementation libs.androidx.junit.v111
     androidTestImplementation libs.androidx.espresso.core.v320
     androidTestImplementation libs.mockito.core.v2210
+
 
 }
 
