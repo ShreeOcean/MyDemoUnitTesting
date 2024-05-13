@@ -1,4 +1,4 @@
-package com.ocean.demounittest.shopingListTestingYT.data
+package com.ocean.demounittest.shoppingListTestingYT.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

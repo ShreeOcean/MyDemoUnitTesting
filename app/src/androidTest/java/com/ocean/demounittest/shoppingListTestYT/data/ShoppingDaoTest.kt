@@ -1,4 +1,4 @@
-package com.ocean.demounittest.shoppingListTestYT
+package com.ocean.demounittest.shoppingListTestYT.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
@@ -7,9 +7,9 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.ocean.demounittest.getOrAwaitValue
-import com.ocean.demounittest.shopingListTestingYT.data.ShoppingDao
-import com.ocean.demounittest.shopingListTestingYT.data.ShoppingItem
-import com.ocean.demounittest.shopingListTestingYT.data.ShoppingItemDatabase
+import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingDao
+import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingItem
+import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingItemDatabase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
