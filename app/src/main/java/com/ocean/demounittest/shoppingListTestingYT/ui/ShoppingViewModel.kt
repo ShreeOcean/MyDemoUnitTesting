@@ -31,7 +31,7 @@ class ShoppingViewModel  @Inject constructor(private val repository: ShoppingRep
     private val _curImageUrl = MutableLiveData<String>()
     val curImageUrl: LiveData<String> = _curImageUrl
 
-    fun setCurImageUrl(url : String){
+    private fun setCurImageUrl(url : String){
         _curImageUrl.postValue(url)
     }
 
@@ -39,7 +39,7 @@ class ShoppingViewModel  @Inject constructor(private val repository: ShoppingRep
         repository.deleteShoppingItem(shoppingItem)
     }
 
-    fun insertShoppingItemIntoDb(shoppingItem: ShoppingItem) = viewModelScope.launch {
+    private fun insertShoppingItemIntoDb(shoppingItem: ShoppingItem) = viewModelScope.launch {
         repository.insertShoppingItem(shoppingItem)
     }
 
@@ -78,7 +78,7 @@ class ShoppingViewModel  @Inject constructor(private val repository: ShoppingRep
         _image.value = Event(Resource.loading(null))
         viewModelScope.launch {
             val response = repository.searchForImage(imageQuery)
-            _image.value = Event(Resource(Status.SUCCESS, response.body(), ""))
+            _image.value = Event(response)
         }
     }
 

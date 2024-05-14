@@ -4,6 +4,7 @@ import retrofit2.Response
 import androidx.lifecycle.LiveData
 import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingItem
 import com.ocean.demounittest.shoppingListTestingYT.data.remote.responses.ImageResponse
+import com.ocean.demounittest.shoppingListTestingYT.other.Resource
 
 interface ShoppingRepository {
 
@@ -15,6 +16,6 @@ interface ShoppingRepository {
 
     fun observeTotalPrice(): LiveData<Float>
 
-    suspend fun searchForImage(imageQuery : String): Response<ImageResponse>
+    suspend fun searchForImage(imageQuery : String): Resource<ImageResponse>
 
 }
