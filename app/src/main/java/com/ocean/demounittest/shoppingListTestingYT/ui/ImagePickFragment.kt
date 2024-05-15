@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.ocean.demounittest.R
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ImagePickFragment : Fragment(R.layout.fragment_image_pick) {
 
     lateinit var viewModel: ShoppingViewModel

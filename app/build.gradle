@@ -25,6 +25,7 @@ android {
         buildConfigField("String", "API_KEY", API_KEY)
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunner "com.ocean.demounittest.shoppingListTestYT.HiltTestRunner"
+        multiDexEnabled = true
 
     }
 
@@ -57,6 +58,8 @@ dependencies {
     testImplementation project(':app')
     testImplementation libs.truth
     androidTestImplementation libs.truth
+
+    implementation libs.androidx.multidex
 
     // Architectural Components
     implementation libs.androidx.lifecycle.viewmodel.ktx
@@ -118,6 +121,7 @@ dependencies {
     testImplementation libs.kotlinx.coroutines.test
     testImplementation libs.truth
 //    testImplementation libs.mockito.core
+    kaptTest libs.hilt.compiler
 
     // Instrumented Unit Tests
     androidTestImplementation libs.junit
@@ -128,7 +132,11 @@ dependencies {
     androidTestImplementation libs.androidx.junit.v111
     androidTestImplementation libs.androidx.espresso.core.v320
     androidTestImplementation libs.mockito.core.v2210
+//    kaptAndroidTest libs.hilt.android.compiler.v228alpha
+    kaptAndroidTest libs.hilt.android.compiler
 
-
+}
+kapt {
+    correctErrorTypes = true
 }
 
