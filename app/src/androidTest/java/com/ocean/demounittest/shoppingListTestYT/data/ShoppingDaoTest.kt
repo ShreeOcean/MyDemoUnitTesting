@@ -7,9 +7,11 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.ocean.demounittest.getOrAwaitValue
+import com.ocean.demounittest.shoppingListTestYT.launchFragmentInHiltContainer
 import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingDao
 import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingItem
 import com.ocean.demounittest.shoppingListTestingYT.data.local.ShoppingItemDatabase
+import com.ocean.demounittest.shoppingListTestingYT.ui.ShoppingFragment
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -34,8 +36,8 @@ class ShoppingDaoTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    @Inject
-    @Named("test_db")
+//    @Inject
+//    @Named("test_db")
     private lateinit var database: ShoppingItemDatabase
     private lateinit var dao: ShoppingDao
 
@@ -52,6 +54,11 @@ class ShoppingDaoTest {
     @After
     fun teardown(){
         database.close()
+    }
+
+    @Test
+    fun testLaunchFragmentInHiltContainer() {
+        (launchFragmentInHiltContainer <ShoppingFragment> {  })
     }
 
     @Test

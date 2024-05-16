@@ -42,6 +42,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -134,6 +139,7 @@ dependencies {
     androidTestImplementation libs.mockito.core.v2210
 //    kaptAndroidTest libs.hilt.android.compiler.v228alpha
     kaptAndroidTest libs.hilt.android.compiler
+    debugImplementation libs.androidx.fragment.testing
 
 }
 kapt {
