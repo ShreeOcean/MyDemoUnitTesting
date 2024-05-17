@@ -31,7 +31,7 @@ class ShoppingViewModel  @Inject constructor(private val repository: ShoppingRep
     private val _curImageUrl = MutableLiveData<String>()
     val curImageUrl: LiveData<String> = _curImageUrl
 
-    private fun setCurImageUrl(url : String){
+    fun setCurImageUrl(url : String){
         _curImageUrl.postValue(url)
     }
 

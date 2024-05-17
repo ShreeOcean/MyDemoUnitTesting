@@ -34,6 +34,7 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 mockitoCore = "3.11.2"
 mockitoCoreVersion = "2.21.0"
+mockitoKotlin = "2.12.1"
 multidex = "2.0.1"
 navigationFragmentKtx = "2.7.7"
 retrofit = "2.9.0"
@@ -95,6 +96,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 mockito-core-v2210 = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
